@@ -6,6 +6,7 @@ module.exports.config = {
 	description: "Check the amount of yourself or the person tagged",
 	commandCategory: "economy",
 	usages: "[Tag]",
+	aliases: ["bal", "money", "coins"],
 	cooldowns: 5
 };
 

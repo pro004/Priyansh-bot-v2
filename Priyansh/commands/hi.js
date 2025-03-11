@@ -23,7 +23,7 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
     "lô",
     "hii",
     "helo",
-    "hê nhô"
+    "hê nhô",
   ];
   let thread = global.data.threadData.get(event.threadID) || {};
   if (typeof thread["hi"] == "undefined", thread["hi"] == false) return
@@ -48,7 +48,7 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
     let moment = require("moment-timezone");
     let hours = moment.tz('Asia/Manila').format('HHmm');
     let session = (
-    hours > 0001 && hours <= 400 ? "bright morning" : 
+    hours > 1 && hours <= 400 ? "bright morning" : 
     hours > 401 && hours <= 700 ? "morning" :
     hours > 701 && hours <= 1000 ? "shining" :
     hours > 1001 && hours <= 1200 ? "lunch" : 

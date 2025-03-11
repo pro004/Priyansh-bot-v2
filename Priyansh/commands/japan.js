@@ -4,7 +4,7 @@
   hasPermssion: 0,
   credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
   description: "Random ảnh girl",
-  commandCategory: "random-img",
+  commandCategory: "image",
   usages: "japan",
   cooldowns: 5,
   dependencies: {

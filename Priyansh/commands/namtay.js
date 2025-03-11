@@ -20,7 +20,7 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/cache/canvas/`;
-    const path = resolve(__dirname, 'cache/canvas', 'namtay.png');
+    const path = resolve(__dirname, 'cache/canvas', 'namtay.jpeg');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
     if (!existsSync(path)) await downloadFile("https://imgur.com/vcG4det.jpg", path);
 }
@@ -32,10 +32,10 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache", "canvas");
 
-    let namtay_img = await jimp.read(__root + "/namtay.png");
-    let pathImg = __root + `/namtay_${one}_${two}.png`;
-    let avatarOne = __root + `/avt_${one}.png`;
-    let avatarTwo = __root + `/avt_${two}.png`;
+    let namtay_img = await jimp.read(__root + "/namtay.jpeg");
+    let pathImg = __root + `/namtay_${one}_${two}.jpeg`;
+    let avatarOne = __root + `/avt_${one}.jpeg`;
+    let avatarTwo = __root + `/avt_${two}.jpeg`;
     
     let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?height=720&width=720&access_token=1073911769817594|aa417da57f9e260d1ac1ec4530b417de`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));
@@ -55,6 +55,7 @@ async function makeImage({ one, two }) {
     
     return pathImg;
 }
+
 async function circle(image) {
     const jimp = require("jimp");
     image = await jimp.read(image);
@@ -65,16 +66,20 @@ async function circle(image) {
 module.exports.run = async function ({ event, api, args }) {
     const fs = global.nodemodule["fs-extra"];
     const { threadID, messageID, senderID } = event;
-    var mention = Object.keys(event.mentions)[0]
-    let tag = event.mentions[mention].replace("@", "");
-    if (!mention) return api.sendMessage("Please tag one person.", threadID, messageID);
-    else {
-        var one = senderID, two = mention;
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "Hold hands tightly " + tag + ' don't let go bae😍',
-            mentions: [{
-          tag: tag,
-          id: mention
-        }],
-     attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+    const mentions = event.mentions;
+    if (Object.keys(mentions).length !== 1) {
+        return api.sendMessage("Please tag one person.", threadID, messageID);
     }
+    const mention = Object.keys(mentions)[0];
+    const tag = mentions[mention].replace("@", "");
+    const one = senderID;
+    const two = mention;
+    return makeImage({ one, two }).then(path => api.sendMessage({
+        body: "Hold hands tightly " + tag + ' don\'t let go bae😍',
+        mentions: [{
+            tag: tag,
+            id: mention
+        }],
+        attachment: fs.createReadStream(path)
+    }, threadID, () => fs.unlinkSync(path), messageID));
 }

@@ -4,7 +4,7 @@ module.exports.config = {
 	hasPermssion: 0,
 	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "",
-	commandCategory: "Study, learn more, learn forever",
+	commandCategory: "Study",
 	cooldowns: 0
 };
 

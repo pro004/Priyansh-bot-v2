@@ -19,12 +19,12 @@ if (!args[0]) {api.sendMessage("Please enter a message!",event.threadID, event.m
 const chatbot  =  new  Chatbot({name: "Minari", gender: "Najimi"});
     const res = await chatbot.chat(mess).catch(e => console.log(e));
 
- if(res === "My dear great botmaster, Priyansh.") {
-    api.sendMessage(`I made by master 𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭, also known as Priyanshu`, event.threadID, event.messageID)
+ if(res === "My dear great botmaster, xrotick.") {
+    api.sendMessage(`I made by master xrotick`, event.threadID, event.messageID)
     return;
               }   
-      if(res === "My birthplace is Priyansh's laptop. What is your birthplace?") {
-    api.sendMessage(`I live here in Rajasthan, India. What about you?`, event.threadID, event.messageID)
+      if(res === "My birthplace is xrotick's laptop. What is your birthplace?") {
+    api.sendMessage(`I live here in dhaka, bd. What about you?`, event.threadID, event.messageID)
     return;
               } 
       if(res === "My favorite anime is <em>Ghost in the Shell</em>") {
@@ -40,7 +40,7 @@ const chatbot  =  new  Chatbot({name: "Minari", gender: "Najimi"});
     return;
               }     
               
-              if(res === "I obey 𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭.") {
+              if(res === "I obey xrotick.") {
     api.sendMessage(`I obey Prince`, event.threadID, event.messageID)
     return;
               }     

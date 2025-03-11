@@ -23310,10 +23310,10 @@ var min = Math.floor(Math.random() * 2);
   var data = await Currencies.getData(event.senderID);
   var exp =  data.exp;
   var money = data.money
-      if(money < 200) api.sendMessage("Do you need $200 to see the photo?",event.threadID,event.messageID)
+      if(money < 200) api.sendMessage("tk ase ? sala tk de age pore mayer cobi dekis . 500 tk de premium jinis dekamu ",event.threadID,event.messageID)
           else {
-   Currencies.setData(event.senderID, options = {money: money - 25000})
-   var callback = () => api.sendMessage({body:`🙉⚜️ Photo: ${link.length}\n💸 -$200!`,attachment: fs.createReadStream(__dirname + "/cache/1.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.jpg"), event.messageID); 
+   Currencies.setData(event.senderID, options = {money: money - 500})
+   var callback = () => api.sendMessage({body:`🙉⚜️ lo shala: ${link.length}\n💸 -$500!`,attachment: fs.createReadStream(__dirname + "/cache/1.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.jpg"), event.messageID); 
       return request(encodeURI(link[Math.floor(Math.random() * link.length)] + (max - min))).pipe(fs.createWriteStream(__dirname+"/cache/1.jpg")).on("close",() => callback());
      }
    };
