@@ -28,7 +28,7 @@ const prefix = threadSetting.PREFIX || global.config.PREFIX;
         return out(`This Is My Prefix ⇉ [ ${prefix} ]\n💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞𝕏𝕣𝕠𝕥𝕚𝕔𝕜☜ 💫\n🖤𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 𝕏𝕣𝕠𝕥𝕚𝕔𝕜🖤\n😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ www.facebook.com/protick.mrc\n
 👋For Any Kind Of Help Contact On Telegram  Username 👉 @Priyanshrajput😇`)
       }
-      else return out('️️️️️️️️️️️️️️️️️️️️️️️️️️️This Is My Prefix ⇉ [ ${prefix} ]  \n💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞𝕏𝕣𝕠𝕥𝕚𝕔𝕜☜ 💫\n🖤𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 𝕏𝕣𝕠𝕥𝕚𝕔𝕜🖤\n😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ www.facebook.com/protick.mrc\n👋For Any Kind Of Help Contact On Telegram  Username 👉 @Priyanshrajput😇' + data.PREFIX)
+      else return out('️️️️️️️️️️️️️️️️️️️️️️️️️️️This Is My Prefix ⇉ [ ${prefix} ]  \n💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞𝕏𝕣𝕠𝕥𝕚𝕔𝕜☜ 💫\n🖤𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 𝕏𝕣𝕠𝕥𝕚𝕔𝕜🖤\n😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ www.facebook.com/protick.mrc\n👋For Any Kind Of Help Contact On Whatsapp number 👉 01905766826😇' + data.PREFIX)
     }
 
   });
