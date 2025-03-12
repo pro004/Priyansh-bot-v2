@@ -5,7 +5,7 @@
     "autoCreateDB": true,
     "notiGroup": true,
     "NOTIFICATION": true,
-    "allowInbox": false,
+    "allowInbox": true,
     "autoClean": true,
     "commandDisabled": [
         ""
@@ -19,10 +19,10 @@
     "BOTNAME": "YoU★CrUsH★𓂅𓍼ꗃ⋈⌯⋈",
     "PREFIX": "-",
     "ADMINBOT": [
-        "100037743553265"
+        "100057041031881"
     ],
     "NDH": [
-        "100037743553265"
+        "100057041031881"
     ],
     "DATABASE": {
         "sqlite": {
@@ -35,7 +35,7 @@
         "listenEvents": true,
         "pauseLog": true,
         "logLevel": "error",
-        "selfListen": false,
+        "selfListen": true,
         "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1"
     },
     "version": "1.2.14",
@@ -46,11 +46,12 @@
         "cooldownTime": 2000000
     },
     "checktt": {
-        "maxColumn": 300
+        "maxColumn": 10
     },
     "daily": {
-        "cooldownTime": 43200000,
-        "rewardCoin": 1000
+        "cooldownTime": 40,
+        "rewardCoin": 100000,
+        "rewardExp": 1000
     },
     "diemdanh": {
         "cooldownTime": 3000000
@@ -89,9 +90,6 @@
         "out": "",
         "kickAll": "",
         "delThread": ""
-    },
-    "weather": {
-        "OPEN_WEATHER": "c4ef85b93982d6627681b056e24bd438"
     },
     "work": {
         "cooldownTime": 1200000
@@ -133,7 +131,7 @@
         "cooldownTime": 1100000
     },
     "sim": {
-        "APIKEY": "Priyansh_1234567890"
+        "APIKEY": "Meew_sjfdFiF8FZWJE5cbrRQn3flpTI2YKI"
     },
     "lamviec": {
         "cooldownTime": 1200000
@@ -177,6 +175,9 @@
     },
     "music": {
         "YOUTUBE_API": "AIzaSyAwzbcb-6QAzgZtl4qf3Z2GhQ3mqrbbMR8"
+    }, 
+    "weather": {
+        "OPEN_WEATHER": "081c82065cfee62cb7988ddf90914bdd"
     },
     "mine": {
         "APIKEY": ""
@@ -196,12 +197,68 @@
     },
     "bannermkt": {
         "APIKEY": "tdunguwu"
-    },
+    }, 
     "radio": {
         "YOUTUBE_API": "AIzaSyA81xmaIo6uozgapDe7_yDjFfnOwkfx_XA"
     },
+    "covid": {
+        "APIKEY": "MEWbmhkanJ0MjYwMjtuaGR6MTIzNDU2Nzg5ekB"
+    },
+    "tikvideo": {
+        "APIKEY": "544df914a6mshf53fdd7db40cb84p1a7f8ejsnf02e9b3e05c7"
+    },
+     "ytbmp4": {
+        "YOUTUBE_API": "AIzaSyBkeljYcuoBOHfx523FH2AEENlciKnm3jM"
+    },
+    "song": {
+        "YOUTUBE_API": "AIzaSyA25_Ne0gD1DeciKIM8PzZBLvQ0MgGRlr0",
+        "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub",
+        "ManhG_KEY": "mzk_B7P7BM8K4OCCO704X2K",
+        "API_KEY": "mzk_B7P7BM8K4OCCO704X2K"
+    }, 
+    "dutube": {
+        "YOUTUBE_API": "AIzaSyBkeljYcuoBOHfx523FH2AEENlciKnm3jM"
+    },
+    "singg": {
+        "YOUTUBE_API": "AIzaSyB5Kh5G40yw8PiaGQij0VKAo2rGHIAi6Ư",
+        "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
+    },
+    "audio": {
+        "YOUTUBE_API": "AIzaSyB5Kh5G40yw8PiaGQij0VKAo2rGHIAi6Ư",
+        "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
+    },
     "mkt": {
         "APIKEY": "tdunguwu"
+    },
+     "singgg": {
+        "ManhG_KEY": "AIzaSyCDiLucVbR_t3-clq_ei2Fd4GVAhZyyRo0"
+    },
+     "zmp3": {
+        "YOUTUBE_API": "AIzaSyDBMW5WNbgH93BAvP8w1Dn_oYsGWpaVHeE"
+    },
+    "baolixi": {
+        "cooldownTime": 1200000
+    },
+    "fbvideo": {
+        "API_KEY": "mzkFree_DXHYBXRK6RZLHSEFZ8Q"
+    },
+     "tx": {
+        "APIKEY": "chinhdz"
+    },
+     "simvoice": {
+        "APIKEY": "Meew_kB5wRAlpHhrAj0GhRzmmLHesvvTbXE"
+    },
+    "faith": {
+        "WOLFRAM": "T8J8YV-H265UQ762K"
+    },
+     "bank": {
+        "APIKEY": "chinhdz"
+    },
+    "singv2": {
+        "API_KEY": "mzkFree_722124509AC10"
+    },
+    "insvideo": {
+        "API_KEY": "mzkFree_7A73C23B45C72"
     },
     "moon": {
         "APIKEY": "tdunguwu"
@@ -225,6 +282,13 @@
     },
     "god": {
         "enable": true
+    },
+    "earn": {
+        "cooldownTime": 4320
+    },
+    "botchk": {
+        "autoUnsend": "",
+        "unsendMessageAfter": 5
     },
     "help2": {
         "autoUnsend": true,

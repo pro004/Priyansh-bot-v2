@@ -20,9 +20,9 @@ const fs = global.nodemodule["fs-extra"];
 var link = ["https://i.imgur.com/6UxTLqh.png"];
 var callback = () => api.sendMessage({body:`
 {
-	"name": "Priyansh",
+	"name": "Xrotick",
 	"version": "30.0.0",
-	"description": "A simple Facebook Messenger Bot made by 𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭.",
+	"description": "A simple Facebook Messenger Bot made by 𝕏𝕣𝕠𝕥𝕚𝕔𝕜.",
 	"main": "Priyansh.js",
 	"scripts": {
 		"start": "node index.js",
@@ -43,7 +43,7 @@ var callback = () => api.sendMessage({body:`
 		"prince",
 		"mental"
 	],
-	"author": "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+	"author": "𝕏𝕣𝕠𝕥𝕚𝕔𝕜",
 	"license": "GPL-3.0",
 	"bugs": {
 		"url": "https://github.com/priyanshu192/fb-bot/issues"

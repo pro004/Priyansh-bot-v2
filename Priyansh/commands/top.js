@@ -2,7 +2,7 @@ module.exports.config = {
   name: "top",
   version: "0.0.5",
   hasPermssion: 0,
-  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+  credits: "PetterSever",
   description: "Top Server!",
   commandCategory: "group",
   usages: "[thread/user/money/level]",
@@ -98,7 +98,7 @@ module.exports.run = async ({ event, api, args, Currencies, Users }) => {
           var name = (await Users.getData(all[i].userID)).name;    
                     
           num += 1;
-          msg.body += '\n' + num + '. ' + name + ': ' + level + "💵";}
+          msg.body += '\n' + num + '. ' + name + ': ' + level + "\n ❤️";}
                     console.log(msg.body)
                     api.sendMessage(msg, event.threadID, event.messageID)
     }
