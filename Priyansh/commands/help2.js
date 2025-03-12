@@ -9,7 +9,7 @@
 	cooldowns: 1,
 	envConfig: {
 		autoUnsend: true,
-		delayUnsend: 300
+		delayUnsend: 800
 	}
 };
 
@@ -67,7 +67,7 @@ module.exports. run = function({ api, event, args, getText }) {
     for (let item of returnArray) msg += `「 ${++i} 」${prefix}${item}\n`;
     
     
-    const siu = `Command list 📄\nMade by Prîyánsh Rajput 🥀\nFor More Information type /help (command name) ✨`;
+    const siu = `Command list 📄\nMade by Xrotick 🥀\nFor More Information type /help (command name) ✨`;
     
  const text = `\nPage (${page}/${Math.ceil(arrayInfo.length/numberOfOnePage)})`;
  
