@@ -1,8 +1,8 @@
 module.exports.config = {
 	name: "chart",
 	version: "1.0",
-	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+	hasPermssion: 2,
+	credits: "Horizon",
 	description: "Create interactive diagrams with top 8 groups",
 	commandCategory: "Box Chat",
 	usages: "",
@@ -28,7 +28,7 @@ module.exports.run = async function({ api, event }) {
          var axios = require('axios');
              var path = __dirname + `/cache/chart.png`;
                  var full = await KMath(count);
-                 var url = `https://quickchart.io/chart?c={type:'doughnut',data:{labels:[${encodeURIComponent(search)}],datasets:[{label:'${encodeURIComponent('Tương Tác')}',data:[${encodeURIComponent(count)}]}]},options:{plugins:{doughnutlabel:{labels:[{text:'${full}',font:{size:26}},{text:'${encodeURIComponent('Total')}'}]}}}}`;
+                 var url = `https://quickchart.io/chart?c={type:'doughnut',data:{labels:[${encodeURIComponent(search)}],datasets:[{label:'${encodeURIComponent('Tương Tác')}',data:[${encodeURIComponent(count)}]}]},options:{plugins:{doughnutlabel:{labels:[{text:'${full}',font:{size:26}},{text:'${encodeURIComponent('Tổng')}'}]}}}}`;
              const { data: stream } = await axios.get(url, {  method: 'GET',  responseType: 'arraybuffer' });
          writeFileSync(path, Buffer.from(stream, 'utf-8'));
      return api.sendMessage({ body: '',attachment: createReadStream(path)},event.threadID,event.messageID);

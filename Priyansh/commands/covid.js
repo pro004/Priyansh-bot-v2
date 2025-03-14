@@ -2,10 +2,10 @@
   name: "covid",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-  description: "View covid19 information",
+  credits: "Thieu Trung Kien",
+  description: "View information about covid 19",
   commandCategory: "Utilities",
-  usages: "[Name of the country]",
+  usages: "[Country name]",
   cooldowns: 5
 };
 
@@ -20,7 +20,7 @@ module.exports.run = async (
   const request = require('request');
   const fs = require("fs");
   var tip = args.join(" ");
-  if (!tip) return api.sendMessage(`Enter a country 🌎 name`, event.threadID, event.messageID);
+  if (!tip) return api.sendMessage(`COUNTRY NOT FOUND!🌎`, event.threadID, event.messageID);
   else
   {
     axios.get(`https://disease.sh/v3/covid-19/countries/${encodeURIComponent(tip)}`).then(res =>
@@ -36,7 +36,7 @@ module.exports.run = async (
       {
         api.sendMessage(
         {
-          body: `🌎Country : ${quocgia}\n\n🦠Infection: ${nhiem}\n☠️Death: ${chet} \n❤️Treatment : ${dieutri}\n📝Population : ${danso}\n🔎Continent: ${chauluc}\n`,
+          body: `🌎COUNTRY : ${quocgia}\n\nCASES: ${nhiem}\n☠️DEATHS: ${chet} \n❤️RECOVERED : ${dieutri}\n📝 POPULATION : ${danso}\n🔎CONTINENT: ${chauluc}`,
           attachment: fs.createReadStream(__dirname + `/cache/covidtk.png`)
         }, event.threadID, () => fs.unlinkSync(__dirname + `/cache/covidtk.png`), event.messageID);
       };

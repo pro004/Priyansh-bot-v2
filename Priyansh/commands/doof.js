@@ -2,11 +2,11 @@ module.exports.config = {
 	name: "doof",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-	description: "Comment on the board ( ͡° ͜ʖ ͡°)",
-	commandCategory: "Edit-IMG",
+	credits: "Rip05", //credit cấm fix nha mấy thằng lợn :)
+	description: "Comment on the board ( ° ͜ʖ ͡°)",
+	commandCategory: "edit-img",
 	usages: "doof [text]",
-	cooldowns: 5,
+	cooldowns: 10,
 	dependencies: {
 		"canvas":"",
 		 "axios":"",
@@ -50,7 +50,7 @@ module.exports.run = async function({ api, event, args }) {
 	const axios = global.nodemodule["axios"];
 	let pathImg = __dirname + '/cache/doof.png';
 	var text = args.join(" ");
-	if (!text) return api.sendMessage("Enter the comment content on the table", threadID, messageID);
+	if (!text) return api.sendMessage("Enter the content of the comment on the board", threadID, messageID);
 	let getPorn = (await axios.get(`https://i.imgur.com/bMxrqTL.png`, { responseType: 'arraybuffer' })).data;
 	fs.writeFileSync(pathImg, Buffer.from(getPorn, 'utf-8'));
 	let baseImage = await loadImage(pathImg);
@@ -71,4 +71,4 @@ module.exports.run = async function({ api, event, args }) {
 	const imageBuffer = canvas.toBuffer();
 	fs.writeFileSync(pathImg, imageBuffer);
 return api.sendMessage({ attachment: fs.createReadStream(pathImg) }, threadID, () => fs.unlinkSync(pathImg), messageID);        
-      }
+}
