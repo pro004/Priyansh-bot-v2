@@ -1,10 +1,10 @@
 module.exports.config = {
-	name: "group",
+	name: "box",
 	version: "1.0.0",
-	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-    description: "Parent group settingst.",
-	commandCategory: "box",
+	hasPermssion: 1,
+	credits: "HungCho (Khánh Milo Fix)",
+    description: "Các cài đặt của nhóm chat.",
+	commandCategory: "Group",
 	usages: "[name/emoji/admin/image/info]",
 	cooldowns: 1,
 	dependencies: {
@@ -16,7 +16,7 @@ module.exports.config = {
 module.exports.run = async({api, event, args}) => {
 	const fs = global.nodemodule["fs-extra"];
 	const request = global.nodemodule["request"];
-	 if (args.length == 0) return api.sendMessage(`You can use:\n/groupemoji [icon]\n\n/groupname [the box name needs to be changed]\n\n/groupimage [rep any image needs to be set as group chat image]\n\n/gcadmin [tag] => it will give qtv to the person tagged\n\n/groupinfo => All group information !
+	 if (args.length == 0) return api.sendMessage(`Bạn có thể dùng:\n?box emoji [icon]\n\n?box name [tên box cần đổi]\n\n?box image [rep một ảnh bất kì cần đặt thành ảnh box]\n\n?box admin [tag] => nó sẽ đưa qtv cho người được tag\n\n?box info => Toàn bộ thông tin của nhóm !
 `, event.threadID, event.messageID);
 
 
@@ -34,8 +34,8 @@ if(args[0] == "me"){
 	 if (args[1] == "admin") {
 		const threadInfo = await api.getThreadInfo(event.threadID)
 		const find = threadInfo.adminIDs.find(el => el.id == api.getCurrentUserID());
-		if(!find) api.sendMessage("BOT needs to throw admin to use ?", event.threadID, event.messageID)
-	  else if(!global.config.ADMINBOT.includes(event.senderID)) api.sendMessage("Cunt powers ?", event.threadID, event.messageID)
+		if(!find) api.sendMessage("BOT cần ném quản trị viên để dùng ?", event.threadID, event.messageID)
+	  else if(!global.config.ADMINBOT.includes(event.senderID)) api.sendMessage("Quyền hạn lồn ?", event.threadID, event.messageID)
      else api.changeAdminStatus(event.threadID, event.senderID, true);
      }
 } 
@@ -51,17 +51,17 @@ const findd = threadInfo.adminIDs.find(el => el.id == namee);
 const find = threadInfo.adminIDs.find(el => el.id == api.getCurrentUserID());
 const finddd = threadInfo.adminIDs.find(el => el.id == event.senderID);
 
-if (!finddd) return api.sendMessage("You are not a box admin ?", event.threadID, event.messageID);		
-if(!find) {api.sendMessage("Don't throw the admin using the cock?", event.threadID, event.messageID)}
+if (!finddd) return api.sendMessage("Mày đéo phải quản trị viên box ?", event.threadID, event.messageID);		
+if(!find) {api.sendMessage("Không ném quản trị viên dùng con cặc ?", event.threadID, event.messageID)}
 if (!findd) {api.changeAdminStatus(event.threadID, namee, true);}
 else api.changeAdminStatus(event.threadID, namee, false)
  }
 
 if (args[0] == "image") {
 
-if (event.type !== "message_reply") return api.sendMessage("❌ You must reply to a certain audio, video, or photo", event.threadID, event.messageID);
-	if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("❌ You must reply to a certain audio, video, or photo", event.threadID, event.messageID);
-	if (event.messageReply.attachments.length > 1) return api.sendMessage(`Please reply only one audio, video, photo!`, event.threadID, event.messageID);
+if (event.type !== "message_reply") return api.sendMessage("❌ Bạn phải reply một audio, video, ảnh nào đó", event.threadID, event.messageID);
+	if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("❌ Bạn phải reply một audio, video, ảnh nào đó", event.threadID, event.messageID);
+	if (event.messageReply.attachments.length > 1) return api.sendMessage(`Vui lòng reply chỉ một audio, video, ảnh!`, event.threadID, event.messageID);
 	 var callback = () => api.changeGroupImage(fs.createReadStream(__dirname + "/cache/1.png"), event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.png"));	
       return request(encodeURI(event.messageReply.attachments[0].url)).pipe(fs.createWriteStream(__dirname+'/cache/1.png')).on('close',() => callback());
       };
@@ -99,12 +99,12 @@ const name = infu[qtv2[i].id].name;
 		listad += '•' + name + '\n';
 	}
 	let sex = threadInfo.approvalMode;
-	var pd = sex == false ? 'Turn off' : sex == true ? 'Turn on' : 'Kh';
+	var pd = sex == false ? 'tắt' : sex == true ? 'bật' : 'Kh';
 	var pdd = sex == false ? '❎' : sex == true ? '✅' : '⭕';
 	 var callback = () =>
 				api.sendMessage(
 					{
-						body: `GC Name: ${threadName}\nGC ID: ${id}\n${pdd} Approve: ${pd}\nEmoji: ${icon}\n-Information:\nTotal ${threadMem} members\nMale ${nam} members \nFemale: ${nu} members\n\nWith ${qtv} Administrators include:\n${listad}\nTotal number of messages: ${sl} msgs.`,
+						body: `Tên box: ${threadName}\nID Box: ${id}\n${pdd} Phê duyệt: ${pd}\nEmoji: ${icon}\n-Thông tin:\nTổng ${threadMem} thành viên\n👨‍🦰Nam: ${nam} thành viên \n👩‍🦰Nữ: ${nu} thành viên\n\n🕵️‍♂️Với ${qtv} quản trị viên gồm:\n${listad}\nTổng số tin nhắn: ${sl} tin.`,
 						attachment: fs.createReadStream(__dirname + '/cache/1.png')
 					},
 					event.threadID,
@@ -116,4 +116,4 @@ const name = infu[qtv2[i].id].name;
 				.on('close', () => callback());
 
 	}	  
-}
+  }

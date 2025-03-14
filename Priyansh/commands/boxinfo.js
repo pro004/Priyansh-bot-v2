@@ -1,13 +1,13 @@
 const fs = require("fs");
 const request = require("request");
 module.exports.config = {
-	name: "groupinfo",
+	name: "boxinfo",
 	version: "1.0.0", 
 	hasPermssion: 1,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+	credits: "HungCatMoi",
 	description: "View your box information",
 	commandCategory: "Box", 
-	usages: "groupinfo", 
+	usages: "boxinfo", 
 	cooldowns: 0,
 	dependencies: [] 
 };
@@ -36,11 +36,11 @@ module.exports.run = async function({ api, event, args }) {
 	let threadName = threadInfo.threadName;
 	let id = threadInfo.threadID;
 	let sex = threadInfo.approvalMode;
-			var pd = sex == false ? 'Turned off' : sex == true ? 'Turned on' : 'Kh';
+			var pd = sex == false ? 'Turn off' : sex == true ? 'turn on' : 'Kh';
 			var callback = () =>
 				api.sendMessage(
 					{
-						body: `🔧 GC Name: ${threadName}\n🔧 Group ID: ${id}\n🔧 Approval: ${pd}\n🔧 Emoji: ${icon}\n🔧 Information: including ${threadMem} members\n🔧 Number of males: ${nam} members\n🔧 Number of females: ${nu} members\n🔧 With ${qtv} administrators\n🔧 Total number of messages: ${sl} msgs.\n\nMade with ❤️ by: 𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭`,
+						body: `⭐️Name: ${threadName}\n👨‍💻 ID Box: ${id}\n👀 Approve: ${pd}\n🧠 Emoji: ${icon}\n👉 Information: includes ${threadMem} member\nNumber of males 🧑‍🦰: ${nam} member\nNumber of female 👩‍🦰: ${nu} member\nWith ${qtv} administrators\n🕵️‍♀️ Total number of messages: ${sl} believe.`,
 						attachment: fs.createReadStream(__dirname + '/cache/1.png')
 					},
 					event.threadID,
