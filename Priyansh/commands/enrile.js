@@ -1,10 +1,8 @@
 module.exports.config = {
-    
 	name: "enrile",
-	
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+	credits: "JolandManzano",
 	description: "enrile say",
 	commandCategory: "edit-img",
 	usages: "[text]",

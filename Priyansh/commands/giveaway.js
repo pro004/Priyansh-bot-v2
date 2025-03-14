@@ -2,8 +2,8 @@ module.exports.config = {
 	name: "giveaway",
 	version: "0.0.1",
 	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-	description: "",
+	credits: "Mirai Team",
+	description: "Give away dành cho nhóm chat, bao xịn xò xD",
 	commandCategory: "other",
 	usages: "[create/details/join/roll/end] [IDGiveAway]",
 	cooldowns: 5

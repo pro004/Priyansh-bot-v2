@@ -4,7 +4,7 @@ module.exports.config = {
 	name: "groupimage",
 	version: "1.0.0", 
 	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+	credits: "HungCatMoi",
 	description: "Change your group image",
 	commandCategory: "Box", 
 	usages: "groupimage", 
@@ -21,4 +21,4 @@ module.exports.run = async ({ api, event }) => {
     let getdata = (await axios.get(`${abc}`, { responseType: 'arraybuffer' })).data;
   fs.writeFileSync(pathImg, Buffer.from(getdata, 'utf-8'));
     return api.changeGroupImage(fs.createReadStream(__dirname + '/cache/loz.png'), event.threadID, () => fs.unlinkSync(pathImg), event.messageID);
-  }
+}

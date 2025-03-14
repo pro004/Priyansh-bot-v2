@@ -1,26 +1,29 @@
 module.exports.config = {
 	name: "getlink",
-	version: "1.0.1",
+	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-	description: "Get the URL Download from Video, Audio is sent from the group",
-	commandCategory: "Tool",
+	credits: "Mirai Team & Khánh Milo",
+	description: "Get download url from video, audio sent from group",
+	commandCategory: "other",
 	usages: "getLink",
 	cooldowns: 5,
+	dependencies: {
+		"tinyurl": ""
+	}
 };
 
-module.exports.languages = {
-	"vi": {
-		"invaidFormat": "❌ Tin nhắn bạn phản hồi phải là một audio, video, ảnh nào đó"
-	},
-	"en": {
-		"invaidFormat": "❌ Your need reply a message have contain an audio, video or picture"
-	}
-}
-
-module.exports.run = async ({ api, event, getText }) => {
-	if (event.type !== "message_reply") return api.sendMessage(getText("invaidFormat"), event.threadID, event.messageID);
-	if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage(getText("invaidFormat"), event.threadID, event.messageID);
-	if (event.messageReply.attachments.length > 1) return api.sendMessage(getText("invaidFormat"), event.threadID, event.messageID);
-	return api.sendMessage(event.messageReply.attachments[0].url, event.threadID, event.messageID);
+module.exports.run = async ({ api, event }) => {
+	let { messageReply, threadID } = event;
+	if (event.type !== "message_reply") return api.sendMessage("❌ Byou have to replay a certain audio, video, photo", event.threadID, event.messageID);
+	if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("❌ You must reply to a certain audio, video, or photo", event.threadID, event.messageID);
+	else {
+            let num = 0
+            let msg = `Yes${messageReply.attachments.length} Attachments:\n`
+          for (var i = 0; i < messageReply.attachments.length; i++) {
+				var shortLink = await global.nodemodule["tinyurl"].shorten(messageReply.attachments[i].url);
+				num +=1;
+        msg += `${num}: ${shortLink}\n`;
+    	}
+        api.sendMessage(msg,threadID);
+        }
 }
