@@ -2,7 +2,7 @@ module.exports.config = {
     name: "arrest",
     version: "2.0.0",
     hasPermssion: 0,
-    credits: "Abdulla Tech 49",
+    credits: "Joshua Sy",
     description: "Arrrest a friend you mention",
     commandCategory: "image",
     usages: "[mention]",

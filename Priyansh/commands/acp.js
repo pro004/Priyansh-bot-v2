@@ -2,9 +2,9 @@ module.exports.config = {
   name: "acp",
   version: "1.0.0",
   hasPermssion: 2,
-  credits: "𝕏𝕡𝕣𝕠𝕥𝕚𝕔𝕜",
+  credits: "NTKhang",
   description: "Make friends via Facebook id",
-  commandCategory: "bot id",
+  commandCategory: "Tiện ích",
   usages: "uid",
   cooldowns: 0
 };

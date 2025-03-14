@@ -1,7 +1,7 @@
 module.exports.config = {
  name: "antirobbery",
  version: "1.0.0",
- credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+ credits: "D-Jukie",
  hasPermssion: 1,
  description: "Prevent changing group administrators",
  usages: "",
@@ -19,4 +19,4 @@ module.exports.run = async({ api, event, Threads}) => {
     await Threads.setData(event.threadID, { data });
       global.data.threadData.set(parseInt(event.threadID), data);
     return api.sendMessage(`${(data["guard"] == true) ? "turn on" : "Turn off"} Successful Anti-Robbery Group`, event.threadID, event.messageID);
-}
+  }

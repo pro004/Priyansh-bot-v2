@@ -2,9 +2,9 @@ module.exports.config = {
   name: "appstate",
   version: "1.0.0",
   hasPermssion: 2,
-  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-  description: "refresh appstate.json",
-  commandCategory: "Admin",
+  credits: "ManhG",
+  description: "Refresh appstate.json",
+  commandCategory: "Hệ thống admin-bot",
   usages: "appstate",
   cooldowns: 5,
   dependencies: {
@@ -13,7 +13,7 @@ module.exports.config = {
 
 module.exports.run = async function ({ api, event, args }) {
   const fs = require("fs-extra");
-  const permission = ["100037743553265", "100037743553265"];
+  const permission = ["100011758721084",];
 	if (!permission.includes(event.senderID)) return api.sendMessage("You don't have permission to use this command", event.threadID, event.messageID);
   let appstate = api.getAppState();
   // convert JSON object to a string
@@ -27,4 +27,4 @@ module.exports.run = async function ({ api, event, args }) {
     }
   });
 
-}
+    }

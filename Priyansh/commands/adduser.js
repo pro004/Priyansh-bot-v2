@@ -1,8 +1,13 @@
+/**
+* @author ProCoderMew
+* @warn Do not edit code or edit credits
+*/
+
 module.exports.config = {
 	name: "adduser",
 	version: "2.4.3",
 	hasPermssion: 0,
-	credits: "𝕏𝕡𝕣𝕠𝕥𝕚𝕔𝕜",
+	credits: "ProCoderMew",
 	description: "Add user to the group by link or id",
 	commandCategory: "group",
 	usages: "[args]",
@@ -49,4 +54,4 @@ module.exports.run = async function ({ api, event, args }) {
 			else return out(`Added ${name ? name : "member"} to group !`)
 		}
 	}
-    }
+                   }

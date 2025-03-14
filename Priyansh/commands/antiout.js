@@ -1,10 +1,10 @@
 module.exports.config = {
     name: "antiout",
     version: "1.0.0",
-    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+    credits: "DungUwU (Khánh Milo Fix)",
     hasPermssion: 1,
-    description: "Turn off antiout",
-    usages: "antiout on/off",
+    description: "Turn off/on antiout",
+    usages: "on/off",
     commandCategory: "system",
     cooldowns: 0
 };
@@ -17,6 +17,6 @@ module.exports.run = async({ api, event, Threads}) => {
     await Threads.setData(event.threadID, { data });
     global.data.threadData.set(parseInt(event.threadID), data);
     
-    return api.sendMessage(`✅ Done ${(data["antiout"] == true) ? "turn on" : "Turn off"} successful antiout!`, event.threadID);
+    return api.sendMessage(`✅Is already ${(data["antiout"] == true) ? "turn on" : "turn off"} successful antiout!`, event.threadID);
 
 }
